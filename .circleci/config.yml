@@ -20,9 +20,6 @@ jobs:
     steps:
       - checkout # checkout source code
       - run:
-          name: "Build library"
-          command: poetry build
-      - run:
           name: "Add TestPyPi as upstream"
           command: poetry config repositories.test-pypi https://test.pypi.org/legacy/
       - run:
