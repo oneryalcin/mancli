@@ -15,7 +15,30 @@ jobs:
           root: ~/project
           paths:
             - .
+  deploy:
+    requires:
+      - build_and_test
+    executor: python/default
+    steps:
+      - checkout
+      - python/dist
+      - run:
+          name: "Build library"
+          command: poetry build
+      - run:
+          name: "Add TestPyPi as upstream"
+          command: poetry config repositories.test-pypi https://test.pypi.org/legacy/
+      - run:
+          name: "Store TestPyPi token"
+          command: poetry config pypi-token.test-pypi ${TESTPYPITOKEN}
+      - run:
+          name: "Bump version"
+          command: poetry version patch
+      - run:
+          name: "publish to TestPyPi"
+          command: poetry publish -r test-pypi
 workflows:
   build_test_workflow:
     jobs:
       - build_and_test
+      - deploy
