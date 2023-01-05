@@ -9,8 +9,11 @@ jobs:
       - python/install-packages:
           pkg-manager: poetry
       - run:
-          name: "Run tests"
+          name: "Run unit tests"
           command: poetry run python -m unittest discover
+      - run:
+          name: "Run behave tests"
+          command: poetry run behave
       - persist_to_workspace:
           root: ~/project
           paths:
