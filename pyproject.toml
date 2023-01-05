@@ -15,5 +15,5 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
-klickbrick = 'mancli.hello:run'
+klickbrick = 'mancli.klick_brick_cli:main'
 
