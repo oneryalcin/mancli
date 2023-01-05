@@ -35,7 +35,7 @@ jobs:
           name: "publish to TestPyPi"
           command: poetry publish -r test-pypi
 workflows:
-  build_test_workflow:
+  build_test_deploy:
     jobs:
       - build_and_test
       - deploy:
