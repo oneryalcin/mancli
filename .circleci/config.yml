@@ -7,10 +7,10 @@ jobs:
     steps:
       - checkout # checkout source code
       - python/install-packages:
-          pkg-manager: pip
+          pkg-manager: poetry
       - run:
-          name: Run tests
-          command: python -m unittest discover -b
+          name: "Run tests"
+          command: poetry run python -m unittest discover
       - persist_to_workspace:
           root: ~/project
           paths:
