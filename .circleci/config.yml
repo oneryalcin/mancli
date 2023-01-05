@@ -18,8 +18,6 @@ jobs:
   deploy:
     executor: python/default
     steps:
-      - checkout
-      - python/dist
       - run:
           name: "Build library"
           command: poetry build
