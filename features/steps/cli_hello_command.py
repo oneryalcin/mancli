@@ -3,6 +3,7 @@ import subprocess
 use_step_matcher("re")
 
 
+# ------------------------------------------------------------------------------------------------
 @when("user runs command klickbrick hello")
 def step_impl(context):
     """
@@ -19,6 +20,7 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     assert context.result.stdout == "hello world\n"
+# ----------------------------------------------------------------------------------------------------
 
 
 @when("user runs command klickbrick hello --name Oner")
@@ -37,3 +39,4 @@ def step_impl(context):
     :type context: behave.runner.Context
     """
     assert context.result.stdout == "hello Oner\n"
+# ----------------------------------------------------------------------------------------------------
