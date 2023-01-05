@@ -33,7 +33,7 @@ jobs:
           command: poetry version patch
       - run:
           name: "publish to TestPyPi"
-          command: poetry publish -r test-pypi
+          command: poetry publish --build -r test-pypi
 workflows:
   build_test_deploy:
     jobs:
