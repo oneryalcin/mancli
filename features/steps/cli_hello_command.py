@@ -14,12 +14,13 @@ def step_impl(context):
     )
 
 
-@then("CLI prints `hello world`")
+@then("CLI prints `Hello world`")
 def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert context.result.stdout == "hello world\n"
+    print(f'CONTEXT: {context.result}')
+    assert context.result.stdout == "Hello world\n"
 # ----------------------------------------------------------------------------------------------------
 
 
@@ -33,10 +34,10 @@ def step_impl(context):
     )
 
 
-@then("CLI prints `hello Oner`")
+@then("CLI prints `Hello Oner`")
 def step_impl(context):
     """
     :type context: behave.runner.Context
     """
-    assert context.result.stdout == "hello Oner\n"
+    assert context.result.stdout == "Hello Oner\n"
 # ----------------------------------------------------------------------------------------------------
