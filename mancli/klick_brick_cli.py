@@ -12,7 +12,7 @@ def parse_args(args):
     hello = subparsers.add_parser('hello', help="Friendly command that says hello")
     hello.add_argument('--name', '-n', type=str, default="world", help="Optional flag to be more personal")
 
-    return global_parser.parse_args()
+    return global_parser.parse_args(args)
 
 
 def construct_greeting(name):
